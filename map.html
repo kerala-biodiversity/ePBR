@@ -36,6 +36,7 @@
 
 <script type="text/javascript" src="lsg-simplified.js"></script>
 <script type="text/javascript" src="data.js"></script>
+<script type="text/javascript" src="checklists.js"></script>
 
 <script type="text/javascript">
     var KERALA_BOUNDS = [
@@ -60,7 +61,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Bird Species</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + (data[props.wikidata] || "missing number of") + ' species' : 'Hover over a lsg');
+			'<b>' + props.name + '</b><br />' + (data[props.wikidata] || "missing number of") + ' species out of ' + checklists[props.wikidata] + ' checklists'  : 'Hover over a lsg');
 	};
 
 	info.addTo(map);
