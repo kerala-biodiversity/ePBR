@@ -37,6 +37,7 @@
 <script type="text/javascript" src="lsg-simplified.js"></script>
 <script type="text/javascript" src="data.js"></script>
 <script type="text/javascript" src="checklists.js"></script>
+<script type="text/javascript" src="unsafe.js"></script>
 
 <script type="text/javascript">
     var KERALA_BOUNDS = [
@@ -60,8 +61,8 @@
 	};
 
 	info.update = function (props) {
-		this._div.innerHTML = '<h4>Checklists</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + (checklists[props.wikidata] ?? "missing number of") + ' checklists totalling ' + data[props.wikidata] + ' unique species'  : 'Hover over a lsg');
+		this._div.innerHTML = '<h4>Unsafe Species (Vulnerable, Near Threatened, Endangered, Critically Endangered)</h4>' +  (props ?
+			'<b>' + props.name + '</b><br />' + (unsafe[props.wikidata] ?? "missing number of") + ' species of ' + data[props.wikidata] + ' total species'  : 'Hover over a lsg');
 	};
 
 	info.addTo(map);
@@ -69,13 +70,13 @@
 
 	// get color depending on population density value
 	function getColor(d) {
-		return d > 4000 ? '#800026' :
-			d > 3500  ? '#BD0026' :
-			d > 3000  ? '#E31A1C' :
-			d > 2000  ? '#FC4E2A' :
-			d > 1000   ? '#FD8D3C' :
-			d > 500   ? '#FEB24C' :
-			d > 100   ? '#FED976' : '#FFEDA0';
+		return d > 21 ? '#800026' :
+			d > 18  ? '#BD0026' :
+			d > 15  ? '#E31A1C' :
+			d > 12  ? '#FC4E2A' :
+			d > 9   ? '#FD8D3C' :
+			d > 6   ? '#FEB24C' :
+			d > 3   ? '#FED976' : '#FFEDA0';
 	}
 
 	function style(feature) {
@@ -85,7 +86,7 @@
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.7,
-			fillColor: getColor(checklists[feature.properties.wikidata])
+			fillColor: getColor(unsafe[feature.properties.wikidata])
 		};
 	}
 
@@ -140,7 +141,7 @@
 	legend.onAdd = function (map) {
 
 		var div = L.DomUtil.create('div', 'info legend');
-		var grades = [0, 100, 500, 1000, 2000, 3000, 3500, 4000];
+		var grades = [0, 3, 6, 9, 12, 15, 18, 21];
 		var labels = [];
 		var from, to;
 
