@@ -10,6 +10,6 @@ Signup here to Join [https://forms.gle/dVwiSCkksJ8BuG3o7](https://forms.gle/dVwi
 
 # Credits
 * eBird Basic Dataset. Version: EBD_relApr-2022. Cornell Lab of Ornithology, Ithaca, New York. Apr 2022.
-* Map data from OpenDataKerala & OpenStreetMap Kerala https://github.com/opendatakerala/lsg-kerala-data/releases/tag/1.1.0
+* Map data from [OpenDataKerala](https://opendatakerala.org/) & [OpenStreetMap Kerala](https://wiki.openstreetmap.org/wiki/Kerala) [https://github.com/opendatakerala/lsg-kerala-data/releases/](https://github.com/opendatakerala/lsg-kerala-data/releases)
 * All eBirders of Kerala
 * Kerala Biodiversity Monitoring Network
