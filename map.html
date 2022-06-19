@@ -60,7 +60,7 @@
 
 	info.update = function (props) {
 		this._div.innerHTML = '<h4>Bird Species</h4>' +  (props ?
-			'<b>' + props.name + '</b><br />' + data[props.wikidata] + ' species' : 'Hover over a lsg');
+			'<b>' + props.name + '</b><br />' + (data[props.wikidata] || "missing number of") + ' species' : 'Hover over a lsg');
 	};
 
 	info.addTo(map);
